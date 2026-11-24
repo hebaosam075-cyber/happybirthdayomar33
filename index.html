@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Omar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- الموسيقى الخلفية -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- النجوم المضيئة -->
+    <div id="stars-container"></div>
+
+    <!-- شاشة البداية -->
+    <div id="welcome-screen" class="screen active">
+        <div class="heart-container" id="start-btn">
+            <div class="heart"></div>
+            <p class="start-text">ابدأ</p>
+        </div>
+    </div>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="main-screen" class="screen">
+        
+        <!-- قسم كتابة الرسائل -->
+        <div id="typing-container">
+            <h1 id="typed-text"></h1>
+        </div>
+
+        <!-- سهم الانتقال -->
+        <div id="arrow-container" class="hidden">
+            <p>دوس على السهم</p>
+            <div id="down-arrow" class="arrow">↓</div>
+        </div>
+
+        <!-- القلب الناري -->
+        <div id="fire-heart-container" class="hidden">
+            <div class="fire-heart">
+                <h1>Happy birthday Omar</h1>
+            </div>
+        </div>
+
+        <!-- قسم اللعبة -->
+        <div id="quiz-container" class="hidden">
+            <div id="quiz-intro" class="quiz-intro-text"></div>
+            
+            <div id="quiz-box" class="quiz-card hidden">
+                <h2 id="question-text"></h2>
+                <div class="options-container" id="options-container"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- شاشة صناديق الهدايا -->
+    <div id="gifts-screen" class="screen">
+        <h2 class="gifts-title">دوس على صناديق الهدايا</h2>
+        <div class="boxes-container">
+            <div class="gift-box" onclick="openGift(1)">
+                <div class="box-icon">🎁</div>
+                <div class="gift-message" id="msg-1">i wish you a happy life</div>
+            </div>
+            <div class="gift-box" onclick="openGift(2)">
+                <div class="box-icon">🎁</div>
+                <div class="gift-message" id="msg-2">the most beautiful 22 years</div>
+            </div>
+            <div class="gift-box" onclick="openGift(3)">
+                <div class="box-icon">🎁</div>
+                <div class="gift-message" id="msg-3">you will do it</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
